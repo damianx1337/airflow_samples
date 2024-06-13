@@ -67,7 +67,7 @@ with DAG(
 # [START howto_operator_bash_skip]
 this_will_skip = BashOperator(
     task_id="this_will_skip",
-    bash_command='echo "hello world"; exit 99;',
+    bash_command='echo "hello world {{ params.example_key }}"; exit 99;',
     dag=dag,
 )
 # [END howto_operator_bash_skip]
